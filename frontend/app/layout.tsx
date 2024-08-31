@@ -1,13 +1,14 @@
 import "@/styles/globals.css";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
+import SidebarComponent from "@/components/SidebarComponent";
+import { UserContext } from "@/components/userContext/UserContext";
+import { PROFILE } from "@/config/constants";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
-import SidebarComponent from "@/components/SidebarComponent";
 
 export const metadata: Metadata = {
   title: {
@@ -42,12 +43,12 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <section className="flex">
-            <div className="w-1/4 bg-sidebar p-4">
+          <div className="flex h-screen overflow-hidden">
+            <div className="w-1/6 bg-sidebar p-4 border-white sticky top-0 h-screen">
               <SidebarComponent />
             </div>
-            <main className="w-3/4 p-6">{children}</main>
-          </section>
+            <main className="w-5/6 p-6 overflow-y-auto">{children}</main>
+          </div>
         </Providers>
       </body>
     </html>

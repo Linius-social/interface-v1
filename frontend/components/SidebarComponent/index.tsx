@@ -1,16 +1,15 @@
-import { faker } from "@faker-js/faker";
-import { Home, User, Notification, Money4 } from "iconsax-react";
+"use client";
+
+import { Home, Money4, Notification, Task, User } from "iconsax-react";
+import { useContext } from "react";
+
+import { UserContext } from "../userContext/UserContext";
 
 import ProfileAccordion from "./ProfileAccordion";
 import { Sidebar } from "./sidebar.style";
-import SidebarMenu from "./SidebarMenu";
 import SidebarItem from "./SidebarItem";
-
-const profile = {
-  name: faker.name.fullName(),
-  address: faker.finance.ethereumAddress(),
-  avatarUrl: faker.image.avatar(),
-};
+import SidebarMenu from "./SidebarMenu";
+import { PROFILE } from "@/config/constants";
 
 const lisSite = [
   {
@@ -36,26 +35,39 @@ const lisSite = [
 ];
 
 const SidebarComponent = () => {
+  const profile = useContext(UserContext);
+
   return (
-    <aside className="h-screen z-[20] sticky top-0">
-      <div className={Sidebar.Header()}>
-        <ProfileAccordion {...profile} />
-      </div>
-      <div className="flex flex-col justify-between h-full">
-        <div className={Sidebar.Body()}>
-          <SidebarMenu title="Menu">
-            {lisSite.map((item, index) => (
-              <SidebarItem
-                key={index}
-                href={item.href}
-                icon={item.icon}
-                title={item.title}
-              />
-            ))}
-          </SidebarMenu>
+    <UserContext.Provider value={PROFILE}>
+      <aside className="h-screen z-[20] sticky top-0 p-2 border-r border-gray-300 dark:border-gray-700">
+        <div>
+          <ProfileAccordion address={profile.address} name={profile.name} />
         </div>
-      </div>
-    </aside>
+        <div className="flex flex-col justify-between h-full">
+          <div className={Sidebar.Body()}>
+            <SidebarMenu title="Menu">
+              {lisSite.map((item, index) => (
+                <SidebarItem
+                  key={index}
+                  href={item.href}
+                  icon={item.icon}
+                  title={item.title}
+                />
+              ))}
+            </SidebarMenu>
+            <hr className="my-4 border-gray-300 dark:border-gray-700" />
+            <SidebarMenu title="Other">
+              <SidebarItem
+                key="faq"
+                href="/faq"
+                icon={<Task />} // Replace with the actual FAQ icon component
+                title="FAQ"
+              />
+            </SidebarMenu>
+          </div>
+        </div>
+      </aside>
+    </UserContext.Provider>
   );
 };
 
