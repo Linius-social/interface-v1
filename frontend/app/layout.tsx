@@ -1,13 +1,14 @@
 import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
-import { siteConfig } from "@/config/site";
+import SidebarComponent from "@/components/SidebarComponent";
+import { UserContext } from "@/components/userContext/UserContext";
+import { PROFILE } from "@/config/constants";
 import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: {
@@ -38,26 +39,15 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
-              </Link>
-            </footer>
+          <div className="flex h-screen overflow-hidden">
+            <div className="w-1/6 bg-sidebar p-4 border-white sticky top-0 h-screen">
+              <SidebarComponent />
+            </div>
+            <main className="w-5/6 p-6 overflow-y-auto">{children}</main>
           </div>
         </Providers>
       </body>

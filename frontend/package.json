@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "next dev --turbo",
+		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
@@ -25,13 +25,19 @@
 		"@react-aria/visually-hidden": "3.8.12",
 		"clsx": "2.1.1",
 		"framer-motion": "~11.1.1",
+		"hugeicons-react": "^0.3.0",
+		"iconsax-react": "^0.0.8",
 		"intl-messageformat": "^10.5.0",
-		"next": "14.2.4",
+		"next": "^14.2.7",
 		"next-themes": "^0.2.1",
 		"react": "18.3.1",
-		"react-dom": "18.3.1"
+		"react-dom": "18.3.1",
+		"react-icons": "^5.3.0"
 	},
 	"devDependencies": {
+		"@faker-js/faker": "^8.4.1",
+		"@locator/babel-jsx": "^0.4.3",
+		"@locator/runtime": "^0.4.3",
 		"@types/node": "20.5.7",
 		"@types/react": "18.3.3",
 		"@types/react-dom": "18.3.0",
