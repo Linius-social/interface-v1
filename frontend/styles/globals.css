@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Primitives */
+:root {
+    --colors-common-orange-100: 25.00 85.71% 93.92%;
+    --colors-common-orange-200: 25.00 91.67% 83.53%;
+    --colors-common-orange-300: 25.00 94.44% 72.94%;
+    --colors-common-orange-400: 25.00 95.00% 61.57%;
+    --colors-common-orange-50: 25.00 100.00% 99.22%;
+    --colors-common-orange-500: 25.00 90.00% 50.00%;
+    --colors-common-orange-600: 25.00 92.31% 42.35%;
+    --colors-common-orange-700: 25.00 93.33% 32.94%;
+    --colors-common-orange-800: 25.00 92.86% 27.45%;
+    --colors-common-orange-900: 25.00 93.33% 18.04%;
+}

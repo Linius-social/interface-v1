@@ -28,7 +28,7 @@ export default function Home() {
           className={buttonStyles({
             color: "primary",
             radius: "full",
-            variant: "shadow",
+            variant: "flat",
           })}
           href={siteConfig.links.docs}
         >
