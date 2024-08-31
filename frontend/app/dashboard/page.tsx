@@ -1,5 +1,7 @@
+import Dashboard from "@/components/dashboard";
+
 const PageDashboard = () => {
-  return <>I love you</>;
+  return <Dashboard />;
 };
 
 export default PageDashboard;
