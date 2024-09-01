@@ -39,7 +39,7 @@ const SidebarComponent = () => {
 
   return (
     <UserContext.Provider value={PROFILE}>
-      <aside className="h-screen z-[20] sticky top-0 p-2 border-r border-gray-300 dark:border-gray-700">
+      <aside className="h-screen z-[20] sticky top-0 p-2">
         <div>
           <ProfileAccordion address={profile.address} name={profile.name} />
         </div>
@@ -55,7 +55,6 @@ const SidebarComponent = () => {
                 />
               ))}
             </SidebarMenu>
-            <hr className="my-4 border-gray-300 dark:border-gray-700" />
             <SidebarMenu title="Other">
               <SidebarItem
                 key="faq"

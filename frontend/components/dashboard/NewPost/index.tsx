@@ -8,10 +8,10 @@ import RepeatIcon from "@/components/shared/icon/RepeatIcon";
 
 const NewPost = () => {
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div className="p-4 bg-foreground-50 rounded-3xl">
       <div className="mb-4">
         <Textarea
-          className="w-full resize-none overflow-hidden rounded-md p-2 border dark:border-gray-700 dark:text-white"
+          className="w-full resize-none overflow-hidden rounded-md"
           placeholder="Type something..."
           rows={1}
         />
@@ -30,7 +30,7 @@ const NewPost = () => {
           />
         </div>
         <div>
-          <Button className="bg-[#f56e0f] text-white hover:bg-[#e65d00] focus:ring-2 focus:ring-[#f56e0f] focus:ring-opacity-50">
+          <Button color="primary" radius="full">
             Post
           </Button>
         </div>

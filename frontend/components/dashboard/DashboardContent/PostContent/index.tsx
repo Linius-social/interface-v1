@@ -1,7 +1,6 @@
 "use client";
 
-import { Avatar, Divider } from "@nextui-org/react";
-import Image from "next/image";
+import { Avatar, Divider, Image, Textarea } from "@nextui-org/react";
 
 import { HeartIcon } from "@/components/shared/icon/HeartIcon";
 import LogoIcon from "@/components/shared/icon/LogoIcon";
@@ -28,7 +27,7 @@ const PostContent = ({
   commentList,
 }: PostContentProps) => {
   return (
-    <div className="bg-black text-white p-6 rounded-lg shadow-lg max-w-md mx-auto">
+    <div className="py-4 rounded-lg shadow-lg w-full mx-auto flex flex-col gap-4">
       <div className="flex items-center mb-4">
         <div className="mr-4">
           {avatarUrl ? (
@@ -42,28 +41,28 @@ const PostContent = ({
           )}
         </div>
         <div>
-          <div className="font-bold text-lg">{author}</div>
-          <div className="text-gray-400 text-sm">
-            {isActive ? `Active ${lastActive} minutes ago` : "Inactive"}
+          <div className="flex flex-row flex-wrap gap-2 items-center justify-start">
+            <div className="font-bold text-lg">{author}</div>
+            <div className="text-gray-400 text-sm">
+              {isActive ? `• Active ${lastActive} minutes ago` : "Inactive"}
+            </div>
           </div>
           <div className="text-gray-500">Some information</div>
         </div>
       </div>
 
-      <div className="mb-4">
-        <Image
-          alt="Post image"
-          className="rounded-lg"
-          height={400}
-          src={imageUrl}
-          width={400}
-        />
-      </div>
+      <Image
+        alt="Post image"
+        className="w-full h-auto"
+        classNames={{
+          wrapper: "!max-w-full rounded-2xl",
+        }}
+        src={imageUrl}
+        isLoading={!imageUrl}
+      />
 
-      <div className="mb-4 text-lg">{postContent}</div>
-
+      <div className="mb-4 text-base">{postContent}</div>
       <Divider className="bg-gray-700 my-4" />
-
       <div className="mb-4">
         <div className="text-gray-400 mb-2">Comments</div>
         <div>
@@ -74,11 +73,22 @@ const PostContent = ({
           ))}
         </div>
       </div>
-
-      <div className="mt-4 flex space-x-4 text-gray-600 dark:text-gray-300">
-        <HeartIcon className="h-6 w-6" />
-        <ShareIcon className="h-6 w-6" />
-        <ViewIcon className="h-6 w-6" />
+      <div className="mt-4 flex space-x-4 text-default-500">
+        <HeartIcon className="h-6 w-6 text-default-500" />
+        <ShareIcon className="h-6 w-6 text-default-500" />
+        <ViewIcon className="h-6 w-6 text-default-500" />
+      </div>
+      <div className="w-full flex flex-row items-start justify-start gap-2">
+        <Avatar
+          alt={author}
+          className="w-8 h-8 rounded-full"
+          src={avatarUrl}
+        />
+        <Textarea
+          placeholder="Write your comment..."
+          radius="full"
+          rows={1}
+        />
       </div>
     </div>
   );

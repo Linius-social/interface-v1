@@ -44,10 +44,10 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="flex h-screen overflow-hidden">
-            <div className="w-1/6 bg-sidebar p-4 border-white sticky top-0 h-screen">
+            <div className="w-1/6 bg-sidebar p-4 border-white sticky top-0 h-screen hidden sm:block">
               <SidebarComponent />
             </div>
-            <main className="w-5/6 p-6 overflow-y-auto">{children}</main>
+            <main className="w-full p-6 overflow-y-auto">{children}</main>
           </div>
         </Providers>
       </body>

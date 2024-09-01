@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, Tab, Tabs } from "@nextui-org/react";
+import { Tab, Tabs } from "@nextui-org/react";
 
 import PostContent from "./PostContent";
 
@@ -12,29 +12,18 @@ const DashboardContent = () => {
       <Tabs
         aria-label="Options"
         className="mb-4"
-        color="warning"
+        color="default"
         variant="light"
+        radius="full"
       >
         <Tab key="photos" title="Photos">
-          <Card>
-            <CardBody>
-              <PostContent {...MOCK_POST_DATA} />
-            </CardBody>
-          </Card>
+          <PostContent {...MOCK_POST_DATA} />
         </Tab>
         <Tab key="music" title="Music">
-          <Card>
-            <CardBody>
-              <PostContent {...MOCK_POST_DATA} />
-            </CardBody>
-          </Card>
+          <PostContent {...MOCK_POST_DATA} />
         </Tab>
         <Tab key="videos" title="Videos">
-          <Card>
-            <CardBody>
-              <PostContent {...MOCK_POST_DATA} />
-            </CardBody>
-          </Card>
+          <PostContent {...MOCK_POST_DATA} />
         </Tab>
       </Tabs>
     </div>
