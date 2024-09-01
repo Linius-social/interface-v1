@@ -9,6 +9,7 @@ import { UserContext } from "@/components/userContext/UserContext";
 import { PROFILE } from "@/config/constants";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
+import { BottomNavbarComponent } from "@/components/BottomNavbarComponent";
 
 export const metadata: Metadata = {
   title: {
@@ -48,6 +49,9 @@ export default function RootLayout({
               <SidebarComponent />
             </div>
             <main className="w-full p-6 overflow-y-auto">{children}</main>
+            <div className="sm:hidden bottom-0 fixed w-full bg-background/1 backdrop-blur-2xl">
+              <BottomNavbarComponent />
+            </div>
           </div>
         </Providers>
       </body>
