@@ -1,5 +1,5 @@
-import type {Config} from "tailwindcss";
-import {nextui} from '@nextui-org/theme'
+import type { Config } from "tailwindcss";
+import { nextui } from '@nextui-org/theme'
 
 /** @type {import('tailwindcss').Config} */
 const config: Config = {
@@ -30,7 +30,9 @@ const config: Config = {
     },
   },
   darkMode: "class",
- plugins: [nextui()],
+  plugins: [nextui({
+    defaultTheme: 'dark',
+  })],
 }
 
 export default config;

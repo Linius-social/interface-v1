@@ -13,6 +13,8 @@ import LogoIcon from "../shared/icon/LogoIcon";
 
 import { truncateText } from "@/helpers";
 import { ArrowRight01Icon } from "hugeicons-react";
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import WalletSelector from "../dashboard/Wallet/WalletSelector";
 
 export type ProfileAccordionProps = {
   address: string;
@@ -22,15 +24,17 @@ export type ProfileAccordionProps = {
 const ProfileAccordion = ({ name, address }: ProfileAccordionProps) => {
   const truncatedAddress = truncateText(address, 20);
   const [isClient, setIsClient] = React.useState(false)
+  const {connected, isLoading} = useWallet()
 
   React.useEffect(() => {
     setIsClient(true)
   }, [])
 
-  if (!isClient) {
+  if (!isClient || isLoading) {
     return <Skeleton className="w-full h-16 rounded-2xl" />
   }
-
+  if(!connected) return <WalletSelector />
+  
   return (
     <Dropdown classNames={{ base: "w-full" }}>
       <DropdownTrigger className="cursor-pointer w-full">
@@ -39,10 +43,10 @@ const ProfileAccordion = ({ name, address }: ProfileAccordionProps) => {
             <LogoIcon className="w-6 h-6" />
           </div>
           <div className="flex flex-col justify-center overflow-hidden">
-            <h3 className="text-base font-medium text-gray-900 dark:text-gray-100 truncate">
+            <h3 className="text-base font-medium text-foreground-900 truncate">
               {name}
             </h3>
-            <span className="text-xs font-medium text-gray-500 dark:text-gray-400 truncate">
+            <span className="text-xs font-medium text-foreground-500 truncate">
               {truncatedAddress}
             </span>
           </div>
