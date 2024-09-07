@@ -22,4 +22,5 @@ export type ProfileDetailType = {
   earningsNumber: number;
   fieldNumber: number;
   tokenValue: number;
+  backgroundUrl: string;
 };

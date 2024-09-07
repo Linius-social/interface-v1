@@ -1,7 +1,12 @@
-import LogoIcon from "@/components/shared/icon/LogoIcon";
+"use client";
+
 import { useMemo } from "react";
+import { Image } from "@nextui-org/react";
+
+import LogoIcon from "@/components/shared/icon/LogoIcon";
 
 export type ProfileComponentProps = {
+  backgroundUrl: string;
   address: string;
   projectsNumber: number;
   earningsNumber: number;
@@ -15,6 +20,7 @@ const ProfileComponent = ({
   earningsNumber,
   fieldNumber,
   tokenValue,
+  backgroundUrl,
 }: ProfileComponentProps) => {
   const userData = useMemo<
     {
@@ -44,8 +50,9 @@ const ProfileComponent = ({
   );
 
   return (
-    <div>
+    <div className="gap-2 border-2">
       <div>
+        <Image alt="background" src={backgroundUrl} />
         <LogoIcon />
       </div>
       <div>

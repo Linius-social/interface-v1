@@ -36,6 +36,11 @@ export const PROFILE: ProfileDetailType = {
     min: 1,
     max: 100,
   }),
+  backgroundUrl: faker.image.urlLoremFlickr({
+    category: "nature",
+    width: 600,
+    height: 400,
+  }),
 };
 
 export const MOCK_POST_DATA: PostContentProps = {

@@ -1,7 +1,20 @@
+import ProfileComponent from "./ProfileComponent";
+
+import { PROFILE } from "@/config/constants";
+
 const ProfilePageComponent = () => {
+  const userData = PROFILE;
+
   return (
     <div>
-      <h1>Profile Page</h1>
+      <ProfileComponent
+        address={userData.address}
+        backgroundUrl={userData.backgroundUrl}
+        earningsNumber={userData.earningsNumber}
+        fieldNumber={userData.fieldNumber}
+        projectsNumber={userData.projectsNumber}
+        tokenValue={userData.tokenValue}
+      />
     </div>
   );
 };
