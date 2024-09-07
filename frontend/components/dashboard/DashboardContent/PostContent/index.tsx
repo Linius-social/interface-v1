@@ -79,16 +79,8 @@ const PostContent = ({
         <ViewIcon className="h-6 w-6 text-default-500" />
       </div>
       <div className="w-full flex flex-row items-start justify-start gap-2">
-        <Avatar
-          alt={author}
-          className="w-8 h-8 rounded-full"
-          src={avatarUrl}
-        />
-        <Textarea
-          placeholder="Write your comment..."
-          radius="full"
-          rows={1}
-        />
+        <Avatar alt={author} className="w-8 h-8 rounded-full" src={avatarUrl} />
+        <Textarea placeholder="Write your comment..." radius="full" rows={1} />
       </div>
     </div>
   );
