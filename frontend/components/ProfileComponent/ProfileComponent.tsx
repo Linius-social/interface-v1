@@ -60,8 +60,8 @@ const ProfileComponent = ({
             <h3 className="text-2xl font-semibold text-foreground-900">
               {address}
             </h3>
-            <div className="flex">
-              <div className="flex gap-4 mx-4 mt-4">
+            <div className="flex justify-between mt-4">
+              <div className="flex gap-4 mx-4">
                 {userData.map((data, index) => (
                   <div key={index} className="flex">
                     <div className="flex flex-col gap-1 items-center justify-center">
@@ -80,14 +80,12 @@ const ProfileComponent = ({
               </div>
               <div>
                 <div className="flex flex-col gap-2">
-                  <div className="flex gap-2 items-center">
-                    <span className="text-sm font-medium text-foreground-500">
-                      Token Value
-                    </span>
-                    <span className="text-lg font-semibold text-foreground-900">
-                      {tokenValue}
-                    </span>
-                  </div>
+                  <span className="text-sm font-medium text-foreground-500">
+                    Token Value
+                  </span>
+                  <span className="text-lg font-semibold text-foreground-900">
+                    {tokenValue}
+                  </span>
                 </div>
               </div>
             </div>
