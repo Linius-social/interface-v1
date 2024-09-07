@@ -25,6 +25,7 @@ const config: Config = {
           "800": 'hsl(var(--colors-common-orange-800))',
           "900": 'hsl(var(--colors-common-orange-900))',
         },
+        focus: "hsl(var(--colors-common-orange-500))",
         background: "#0D0D0D"
       }
     },

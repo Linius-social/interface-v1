@@ -10,6 +10,7 @@ import { Sidebar } from "./sidebar.style";
 import SidebarItem from "./SidebarItem";
 import SidebarMenu from "./SidebarMenu";
 import { PROFILE } from "@/config/constants";
+import dynamic from "next/dynamic";
 
 const lisSite = [
   {
