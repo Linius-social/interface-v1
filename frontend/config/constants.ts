@@ -43,6 +43,13 @@ export const PROFILE: ProfileDetailType = {
   }),
 };
 
+export const MOCK_PROJECT_DATA = {
+  projectName: faker.lorem.words(),
+  projectDescription: faker.lorem.sentence(),
+  projectLink: faker.internet.url(),
+  projectImageLink: faker.image.imageUrl(),
+};
+
 export const MOCK_POST_DATA: PostContentProps = {
   author: faker.person.fullName(),
   avatarUrl: faker.image.avatar(),

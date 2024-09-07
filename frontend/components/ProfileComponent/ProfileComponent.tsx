@@ -1,9 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
-import { Image } from "@nextui-org/react";
-
-import LogoIcon from "@/components/shared/icon/LogoIcon";
+import { Card, CardBody, CardHeader } from "@nextui-org/card";
+import { Avatar, Divider, Image } from "@nextui-org/react";
 
 export type ProfileComponentProps = {
   backgroundUrl: string;
@@ -12,6 +11,7 @@ export type ProfileComponentProps = {
   earningsNumber: number;
   fieldNumber: number;
   tokenValue: number;
+  avatarUrl: string;
 };
 
 const ProfileComponent = ({
@@ -21,6 +21,7 @@ const ProfileComponent = ({
   fieldNumber,
   tokenValue,
   backgroundUrl,
+  avatarUrl,
 }: ProfileComponentProps) => {
   const userData = useMemo<
     {
@@ -41,34 +42,59 @@ const ProfileComponent = ({
         title: "Field",
         value: fieldNumber,
       },
-      {
-        title: "Token Value",
-        value: tokenValue,
-      },
     ],
     [],
   );
 
   return (
-    <div className="gap-2 border-2">
-      <div>
-        <Image alt="background" src={backgroundUrl} />
-        <LogoIcon />
-      </div>
-      <div>
-        <p>{address}</p>
-      </div>
-      <div>
-        <div>
-          {userData.map((item, index) => (
-            <div key={index}>
-              <p>{item.title}</p>
-              <p>{item.value}</p>
-            </div>
-          ))}
+    <Card className="my-10 w-[800px]">
+      <CardHeader className="bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400">
+        <div className="flex justify-center">
+          <Image alt="background" src={backgroundUrl} />
         </div>
-      </div>
-    </div>
+        <Avatar className="h-20 w-20 translate-y-12" src={avatarUrl} />
+      </CardHeader>
+      <CardBody className="mt-4 justify-between">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2 my-4 mx-2">
+            <h3 className="text-2xl font-semibold text-foreground-900">
+              {address}
+            </h3>
+            <div className="flex">
+              <div className="flex gap-4 mx-4 mt-4">
+                {userData.map((data, index) => (
+                  <div key={index} className="flex">
+                    <div className="flex flex-col gap-1 items-center justify-center">
+                      <span className="text-sm font-medium text-foreground-500">
+                        {data.title}
+                      </span>
+                      <span className="text-lg font-semibold text-foreground-900">
+                        {data.value}
+                      </span>
+                    </div>
+                    {index < userData.length - 1 && (
+                      <Divider className="h-full mx-4" orientation="vertical" />
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div>
+                <div className="flex flex-col gap-2">
+                  <div className="flex gap-2 items-center">
+                    <span className="text-sm font-medium text-foreground-500">
+                      Token Value
+                    </span>
+                    <span className="text-lg font-semibold text-foreground-900">
+                      {tokenValue}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CardBody>
+    </Card>
   );
 };
 
