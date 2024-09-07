@@ -13,8 +13,8 @@ const DashboardContent = () => {
         aria-label="Options"
         className="mb-4"
         color="default"
-        variant="light"
         radius="full"
+        variant="light"
       >
         <Tab key="photos" title="Photos">
           <PostContent {...MOCK_POST_DATA} />

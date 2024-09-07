@@ -11,3 +11,16 @@ export type ProfileType = {
   avatar: string;
   address: string;
 };
+
+export type ProfileDetailType = {
+  id: string;
+  name: string;
+  email: string;
+  avatar: string;
+  address: string;
+  projectsNumber: number;
+  earningsNumber: number;
+  fieldNumber: number;
+  tokenValue: number;
+  backgroundUrl: string;
+};

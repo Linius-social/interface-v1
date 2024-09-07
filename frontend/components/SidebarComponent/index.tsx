@@ -4,12 +4,13 @@ import { Home, Money4, Notification, Task, User } from "iconsax-react";
 import { useContext } from "react";
 
 import { UserContext } from "../userContext/UserContext";
-
 import ProfileAccordion from "./ProfileAccordion";
 import { Sidebar } from "./sidebar.style";
 import SidebarItem from "./SidebarItem";
 import SidebarMenu from "./SidebarMenu";
+
 import { PROFILE } from "@/config/constants";
+import dynamic from "next/dynamic";
 
 const lisSite = [
   {
@@ -20,7 +21,7 @@ const lisSite = [
   {
     title: "Profile",
     icon: <User />,
-    href: "/profle",
+    href: "/actors",
   },
   {
     title: "Notification",

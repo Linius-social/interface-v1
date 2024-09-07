@@ -9,6 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@aptos-labs/ts-sdk": "^1.27.1",
 		"@aptos-labs/wallet-adapter-react": "^3.6.0",
 		"@nextui-org/button": "2.0.37",
 		"@nextui-org/code": "2.0.32",
@@ -34,6 +35,7 @@
 		"next-themes": "^0.2.1",
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
+		"react-draggable": "^4.4.6",
 		"react-icons": "^5.3.0",
 		"react-toastify": "^10.0.5"
 	},
