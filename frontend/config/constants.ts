@@ -48,6 +48,19 @@ export const MOCK_PROJECT_DATA = {
   projectDescription: faker.lorem.sentence(),
   projectLink: faker.internet.url(),
   projectImageLink: faker.image.imageUrl(),
+  contributors: faker.number.int({
+    min: 1,
+    max: 100,
+  }),
+  saleType: "Public",
+  minBuy: faker.number.float({
+    min: 1,
+    max: 100,
+  }),
+  maxBuy: faker.number.float({
+    min: 1,
+    max: 100,
+  }),
 };
 
 export const MOCK_POST_DATA: PostContentProps = {

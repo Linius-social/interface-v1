@@ -5,7 +5,7 @@ import { Tab, Tabs } from "@nextui-org/react";
 import ProfileComponent from "./ProfileComponent";
 
 import { MOCK_PROJECT_DATA, PROFILE } from "@/config/constants";
-import ProjectCard from "@/components/ProfileComponent/Project/ProjectCard";
+import ProjectInformationCard from "@/components/ProfileComponent/Project/ProjectInformationCard";
 
 const ProfilePageComponent = () => {
   const userData = PROFILE;
@@ -30,19 +30,19 @@ const ProfilePageComponent = () => {
         variant="light"
       >
         <Tab key="Me" title="Me">
-          <ProjectCard
+          <ProjectInformationCard
             projectDescription={mockProjectData.projectDescription}
             projectImageLink={mockProjectData.projectImageLink}
             projectLink={mockProjectData.projectLink}
             projectName={mockProjectData.projectName}
           />
-          <ProjectCard
+          <ProjectInformationCard
             projectDescription={mockProjectData.projectDescription}
             projectImageLink={mockProjectData.projectImageLink}
             projectLink={mockProjectData.projectLink}
             projectName={mockProjectData.projectName}
           />
-          <ProjectCard
+          <ProjectInformationCard
             projectDescription={mockProjectData.projectDescription}
             projectImageLink={mockProjectData.projectImageLink}
             projectLink={mockProjectData.projectLink}

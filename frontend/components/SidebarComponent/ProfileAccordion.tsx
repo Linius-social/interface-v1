@@ -3,18 +3,18 @@
 import React from "react";
 import {
   Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
   DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   Skeleton,
 } from "@nextui-org/react";
-
-import LogoIcon from "../shared/icon/LogoIcon";
-
-import { truncateText } from "@/helpers";
 import { ArrowRight01Icon } from "hugeicons-react";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
+
+import LogoIcon from "../shared/icon/LogoIcon";
 import WalletSelector from "../dashboard/Wallet/WalletSelector";
+
+import { truncateText } from "@/helpers";
 
 export type ProfileAccordionProps = {
   address: string;
@@ -23,18 +23,18 @@ export type ProfileAccordionProps = {
 
 const ProfileAccordion = ({ name, address }: ProfileAccordionProps) => {
   const truncatedAddress = truncateText(address, 20);
-  const [isClient, setIsClient] = React.useState(false)
-  const {connected, isLoading} = useWallet()
+  const [isClient, setIsClient] = React.useState(false);
+  const { connected, isLoading } = useWallet();
 
   React.useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
   if (!isClient || isLoading) {
-    return <Skeleton className="w-full h-16 rounded-2xl" />
+    return <Skeleton className="w-full h-16 rounded-2xl" />;
   }
-  if(!connected) return <WalletSelector />
-  
+  if (!connected) return <WalletSelector />;
+
   return (
     <Dropdown classNames={{ base: "w-full" }}>
       <DropdownTrigger className="cursor-pointer w-full">

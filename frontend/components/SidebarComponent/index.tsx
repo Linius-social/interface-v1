@@ -1,16 +1,23 @@
 "use client";
 
-import { Home, Money4, Notification, Task, User } from "iconsax-react";
+import {
+  DocumentText,
+  Home,
+  Money4,
+  Notification,
+  Task,
+  User,
+} from "iconsax-react";
 import { useContext } from "react";
 
 import { UserContext } from "../userContext/UserContext";
+
 import ProfileAccordion from "./ProfileAccordion";
 import { Sidebar } from "./sidebar.style";
 import SidebarItem from "./SidebarItem";
 import SidebarMenu from "./SidebarMenu";
 
 import { PROFILE } from "@/config/constants";
-import dynamic from "next/dynamic";
 
 const lisSite = [
   {
@@ -32,6 +39,11 @@ const lisSite = [
     title: "Stake",
     icon: <Money4 />,
     href: "/stake",
+  },
+  {
+    title: "Project",
+    icon: <DocumentText />,
+    href: "/project",
   },
 ];
 
