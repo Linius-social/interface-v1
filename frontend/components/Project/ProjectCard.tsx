@@ -79,9 +79,11 @@ const ProjectCard = ({
               </div>
             </div>
           </div>
-          <div className="inline-flex items-center border border-orange-500 rounded-lg px-3 py-1 text-sm text-orange-500">
-            <Zap className="mr-1" size={16} />
-            <span>#{tokenValue}</span>
+          <div className="rounded-full p-[2px] bg-gradient-to-tr from-[#F56E0F] to-[#F9C228] w-fit h-fit">
+            <div className="inline-flex items-center bg-foreground-50 rounded-full px-3 py-1 text-sm text-orange-500">
+              <Zap className="mr-1" size={16} />
+              <span>#{tokenValue}</span>
+            </div>
           </div>
         </div>
       </CardBody>
