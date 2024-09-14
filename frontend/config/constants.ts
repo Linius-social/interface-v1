@@ -32,7 +32,7 @@ export const PROFILE: ProfileDetailType = {
     min: 1,
     max: 100,
   }),
-  tokenValue: faker.number.float({
+  tokenValue: faker.number.int({
     min: 1,
     max: 100,
   }),
