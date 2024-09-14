@@ -15,7 +15,7 @@ export type ProjectCardProps = {
   projectImageLink: string;
 };
 
-const ProjectCard = ({
+const ProjectInformationCard = ({
   projectName,
   projectDescription,
   projectLink,
@@ -48,4 +48,4 @@ const ProjectCard = ({
   );
 };
 
-export default ProjectCard;
+export default ProjectInformationCard;
