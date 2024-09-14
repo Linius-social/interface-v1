@@ -65,6 +65,10 @@ export const MOCK_PROJECT_DATA = {
     min: 1,
     max: 100,
   }),
+  progress: faker.number.int({
+    min: 1,
+    max: 100,
+  }),
 };
 
 export const MOCK_POST_DATA: PostContentProps = {
