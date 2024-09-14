@@ -22,11 +22,11 @@ const ProjectInformationCard = ({
   projectImageLink,
 }: ProjectCardProps) => {
   return (
-    <Card className="w-full my-4">
+    <Card className="w-full my-4 p-4 rounded-[24px]">
       <CardHeader className="flex justify-between">
         <div>
           <div>
-            <h3 className="text-lg font-medium mb-1">{projectName}</h3>
+            <h3 className="text-lg font-medium mb-1 capitalize">{projectName}</h3>
             <p className="text-sm font-medium text-foreground-500">
               {projectDescription}
             </p>
@@ -37,7 +37,7 @@ const ProjectInformationCard = ({
         </Button>
       </CardHeader>
       <CardBody>
-        <Image alt="project" src={projectImageLink} />
+        <Image alt="project" src={projectImageLink} radius="lg"/>
         <div className="mt-4 flex space-x-4 text-default-500">
           <HeartIcon className="h-6 w-6 text-default-500" />
           <ShareIcon className="h-6 w-6 text-default-500" />

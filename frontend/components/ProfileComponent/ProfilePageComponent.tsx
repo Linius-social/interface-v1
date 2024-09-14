@@ -12,7 +12,7 @@ const ProfilePageComponent = () => {
   const mockProjectData = MOCK_PROJECT_DATA;
 
   return (
-    <div>
+    <div className="w-full flex flex-col items-center justify-start">
       <ProfileComponent
         address={userData.address}
         avatarUrl={userData.avatar}
@@ -28,6 +28,7 @@ const ProfilePageComponent = () => {
         color="default"
         radius="full"
         variant="light"
+        fullWidth
       >
         <Tab key="Me" title="Me">
           <ProjectInformationCard

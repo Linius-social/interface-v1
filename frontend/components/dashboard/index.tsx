@@ -3,7 +3,7 @@ import NewPost from "./NewPost";
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="mx-auto">
       <div className="my-4">
         <NewPost />
       </div>
