@@ -2,6 +2,7 @@
 
 import { PieChart, Pie, Cell } from "recharts";
 import { Clock } from "lucide-react";
+import React from "react";
 
 const data = [
   { name: "Field 1", value: 25 },
@@ -13,6 +14,17 @@ const data = [
 const COLORS = ["#FFA07A", "#FF7F50", "#FF6347", "#FF4500"];
 
 const ProjectToken = () => {
+  const [isClient, setIsClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Render nothing on the server
+  }
+
+
   return (
     <div className=" p-6 font-sans">
       <div className="flex items-center mb-4">
