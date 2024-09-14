@@ -5,8 +5,6 @@ import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 
 import SidebarComponent from "@/components/SidebarComponent";
-import { UserContext } from "@/components/userContext/UserContext";
-import { PROFILE } from "@/config/constants";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { BottomNavbarComponent } from "@/components/BottomNavbarComponent";
@@ -40,7 +38,7 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>

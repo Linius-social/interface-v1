@@ -47,17 +47,21 @@ export const MOCK_PROJECT_DATA = {
   projectName: faker.lorem.words(),
   projectDescription: faker.lorem.sentence(),
   projectLink: faker.internet.url(),
-  projectImageLink: faker.image.imageUrl(),
+  projectImageLink: faker.image.url(),
   contributors: faker.number.int({
     min: 1,
     max: 100,
   }),
   saleType: "Public",
-  minBuy: faker.number.float({
+  minBuy: faker.number.int({
     min: 1,
     max: 100,
   }),
-  maxBuy: faker.number.float({
+  maxBuy: faker.number.int({
+    min: 1,
+    max: 100,
+  }),
+  tokenValue: faker.number.int({
     min: 1,
     max: 100,
   }),
@@ -75,4 +79,14 @@ export const MOCK_POST_DATA: PostContentProps = {
     faker.lorem.sentence(),
     faker.lorem.sentence(),
   ],
+};
+
+export const MOCK_PROJECT_DETAILS = {
+  projectDescription: faker.lorem.paragraphs(10, "\n"),
+  projectLink: faker.internet.url(),
+  projectImageLink: faker.image.urlLoremFlickr({
+    category: "nature",
+    width: 600,
+    height: 400,
+  }),
 };

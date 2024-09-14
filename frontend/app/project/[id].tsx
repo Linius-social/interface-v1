@@ -1,6 +1,6 @@
 import ProjectPageComponent from "@/components/Project/ProjectPageComponent";
 
-const PageProject = () => {
+const PageProjectId = () => {
   return (
     <>
       <ProjectPageComponent />
@@ -8,4 +8,4 @@ const PageProject = () => {
   );
 };
 
-export default PageProject;
+export default PageProjectId;

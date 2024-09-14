@@ -2,15 +2,10 @@ import { Code } from "@nextui-org/code";
 import { Link } from "@nextui-org/link";
 import { Snippet } from "@nextui-org/snippet";
 import { button as buttonStyles } from "@nextui-org/theme";
-import setupLocatorUI from "@locator/runtime";
 
 import { GithubIcon } from "@/components/icons";
 import { subtitle, title } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
-
-if (process.env.NODE_ENV === "development") {
-  setupLocatorUI();
-}
 
 export default function Home() {
   return (

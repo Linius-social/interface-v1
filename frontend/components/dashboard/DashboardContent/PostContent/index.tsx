@@ -57,8 +57,8 @@ const PostContent = ({
         classNames={{
           wrapper: "!max-w-full rounded-2xl",
         }}
-        src={imageUrl}
         isLoading={!imageUrl}
+        src={imageUrl}
       />
 
       <div className="mb-4 text-base">{postContent}</div>
