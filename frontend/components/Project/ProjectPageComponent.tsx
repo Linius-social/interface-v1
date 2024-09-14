@@ -1,8 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import ProjectDetails from "./ProjectDetails";
+import ProjectToken from "./ProjectToken";
 
 import { MOCK_PROJECT_DATA, MOCK_PROJECT_DETAILS } from "@/config/constants";
-import ProjectToken from "./ProjectToken";
 
 const ProjectPageComponent = () => {
   return (

@@ -1,9 +1,9 @@
-import ProjectPageComponent from "@/components/Project/ProjectPageComponent";
+import ProjectListPage from "@/components/Project/ProjectListPageComponent";
 
 const PageProject = () => {
   return (
     <>
-      <ProjectPageComponent />
+      <ProjectListPage />
     </>
   );
 };
