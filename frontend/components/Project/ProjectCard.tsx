@@ -79,10 +79,12 @@ const ProjectCard = ({
               </div>
             </div>
           </div>
-          <div className="rounded-full p-[2px] bg-gradient-to-tr from-[#F56E0F] to-[#F9C228] w-fit h-fit">
-            <div className="inline-flex items-center bg-foreground-50 rounded-full px-3 py-1 text-sm text-orange-500">
+          <div className="rounded-full p-[2px] bg-gradient-to-tr from-white via-black/0 to-primary w-fit h-fit">
+            <div className="inline-flex items-center bg-foreground-50 rounded-full p-4 text-base text-primary font-semibold">
               <Zap className="mr-1" size={16} />
-              <span>#{tokenValue}</span>
+              <span>
+                {tokenValue}
+                ƒ</span>
             </div>
           </div>
         </div>
