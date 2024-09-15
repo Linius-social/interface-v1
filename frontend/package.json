@@ -9,7 +9,9 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@aptos-labs/ts-sdk": "^1.22.2",
 		"@aptos-labs/wallet-adapter-react": "^3.6.0",
+		"@irys/sdk": "^0.2.11",
 		"@nextui-org/button": "2.0.37",
 		"@nextui-org/code": "2.0.32",
 		"@nextui-org/input": "2.2.4",

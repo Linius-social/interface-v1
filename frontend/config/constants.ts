@@ -4,6 +4,7 @@
  */
 
 import { faker } from "@faker-js/faker";
+import { Network } from "@aptos-labs/ts-sdk";
 
 import { PostContentProps } from "@/components/dashboard/DashboardContent/PostContent";
 import { ProfileDetailType } from "@/types";
@@ -94,3 +95,6 @@ export const MOCK_PROJECT_DETAILS = {
     height: 400,
   }),
 };
+
+export const NETWORK: Network =
+  (process.env.NEXT_PUBLIC_APP_NETWORK as Network) || Network.TESTNET;
