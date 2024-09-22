@@ -63,10 +63,6 @@ export const fundNode = async (
   try {
     const fundTx = await webIrys.fund(amount ?? 1000000);
 
-    console.log(
-      `Successfully funded ${webIrys.utils.fromAtomic(fundTx.quantity)} ${webIrys.token}`,
-    );
-
     return true;
   } catch (e) {
     throw new Error(`Error uploading data ${e}`);
@@ -99,7 +95,6 @@ export const uploadFolder = async (
   try {
     const receipt = await webIrys.uploadFolder(files); //returns the manifest ID
 
-    console.log(receipt);
 
     const paths = receipt.manifest.paths;
 

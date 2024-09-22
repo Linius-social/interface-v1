@@ -27,17 +27,6 @@ const PostContent = ({
   postContent,
   commentList,
 }: PostContentProps) => {
-  console.log(
-    "PostContentProps",
-    author,
-    avatarUrl,
-    lastActive,
-    isActive,
-    imageUrl,
-    postContent,
-    commentList,
-  );
-
   return (
     <div className="py-4 rounded-lg shadow-lg w-full mx-auto flex flex-col gap-4">
       <div className="flex items-center mb-4">

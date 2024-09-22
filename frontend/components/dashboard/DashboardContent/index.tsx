@@ -22,7 +22,6 @@ const DashboardContent = () => {
     async function fetchData() {
       const url = `${API_URL}/api/v1/posts/get_all`;
 
-      console.log(url);
       const response = await axios.get<Post[]>(url);
 
       const postsContent = response.data.map((post: Post): PostContentProps => {
