@@ -9,7 +9,6 @@ import { Network } from "@aptos-labs/ts-sdk";
 import { PostContentProps } from "@/components/dashboard/DashboardContent/PostContent";
 import { ProfileDetailType } from "@/types";
 
-export const API_URL = "http://localhost:3000";
 export const APP_NAME = "My App";
 export const APP_VERSION = "0.0.1";
 export const APP_DESCRIPTION = "My App Description";
@@ -98,3 +97,9 @@ export const MOCK_PROJECT_DETAILS = {
 
 export const NETWORK: Network =
   (process.env.NEXT_PUBLIC_APP_NETWORK as Network) || Network.TESTNET;
+
+export const SOCIAL_ADDRESS = process.env.NEXT_PUBLIC_SOCIAL_ADDRESS as string;
+
+export const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+
+export const IRYS_GATE_WAY = process.env.NEXT_PUBLIC_IRYS_GATE_WAY as string;

@@ -93,18 +93,35 @@ export const uploadFile = async (
 export const uploadFolder = async (
   aptosWallet: WalletContextState,
   files: File[],
-) => {
+): Promise<string[]> => {
   const webIrys = await getWebIrys(aptosWallet);
 
   try {
     const receipt = await webIrys.uploadFolder(files); //returns the manifest ID
 
-    console.log(
-      `Files uploaded. Manifest Id=${receipt.manifestId} Receipt Id=${receipt.id}
-      access with: https://gateway.irys.xyz/${receipt.manifestId}/<image-name>`,
-    );
+    console.log(receipt);
 
-    return `https://gateway.irys.xyz/${receipt.manifestId}`;
+    const paths = receipt.manifest.paths;
+
+    const uris: string[] = [];
+
+    for (const key1 in paths) {
+      const level1 = paths[key1];
+
+      for (const key2 in level1) {
+        const level2 = level1[key2];
+
+        if (typeof level2 == "string") {
+          uris.push(level2);
+        } else if (typeof level2 == "object" && level2.id) {
+          uris.push(level2.id);
+        } else {
+          throw new Error("Error uploading folder");
+        }
+      }
+    }
+
+    return uris;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (e: any) {
     throw new Error(`Error uploading folder ${e}`);
