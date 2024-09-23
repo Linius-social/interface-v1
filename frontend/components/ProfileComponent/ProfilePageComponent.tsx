@@ -23,12 +23,12 @@ const ProfilePageComponent = () => {
         tokenValue={userData.tokenValue}
       />
       <Tabs
+        fullWidth
         aria-label="Options"
         className="mb-4"
         color="default"
         radius="full"
         variant="light"
-        fullWidth
       >
         <Tab key="Me" title="Me">
           <ProjectInformationCard

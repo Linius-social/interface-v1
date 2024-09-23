@@ -24,7 +24,6 @@ const ProjectToken = () => {
     return null; // Render nothing on the server
   }
 
-
   return (
     <div className=" p-6 font-sans">
       <div className="flex items-center mb-4">

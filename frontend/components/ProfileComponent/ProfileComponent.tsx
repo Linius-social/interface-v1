@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
-import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import { Avatar, Divider, Image } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/card";
+import { Avatar, Divider } from "@nextui-org/react";
 import { truncateAddress } from "@aptos-labs/wallet-adapter-react";
 
 export type ProfileComponentProps = {
@@ -54,7 +54,11 @@ const ProfileComponent = ({
           className="absolute h-20 w-20 bottom-0 transform translate-x-1/2 translate-y-1/2"
           src={avatarUrl}
         />
-        <img alt="background" src={backgroundUrl} className="w-full aspect-[3/1] object-cover" />
+        <img
+          alt="background"
+          className="w-full aspect-[3/1] object-cover"
+          src={backgroundUrl}
+        />
       </div>
       <CardBody className="mt-8 justify-between items-start w-full">
         <div className="flex flex-col gap-4">

@@ -95,7 +95,6 @@ export const uploadFolder = async (
   try {
     const receipt = await webIrys.uploadFolder(files); //returns the manifest ID
 
-
     const paths = receipt.manifest.paths;
 
     const uris: string[] = [];
