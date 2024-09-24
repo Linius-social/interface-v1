@@ -15,6 +15,9 @@ function Project(props: ProjectProps) {
                     variant="flat"
                     type="text"
                     placeholder="Name"
+                    classNames={{
+                        inputWrapper: "bg-primary-800"
+                    }}
                     fullWidth
                 />
                 <Select placeholder="Address" fullWidth>

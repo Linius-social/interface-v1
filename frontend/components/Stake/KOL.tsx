@@ -16,6 +16,9 @@ function KOL(props: KOLProps) {
                     variant="flat"
                     type="text"
                     placeholder="Name"
+                    classNames={{
+                        inputWrapper: "bg-primary-800"
+                    }}
                     fullWidth
                 />
                 <Select placeholder="Address" fullWidth>
