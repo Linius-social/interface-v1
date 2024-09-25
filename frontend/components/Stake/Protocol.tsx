@@ -21,11 +21,11 @@ function Protocol(props: ProtocolProps) {
         <Input
           fullWidth
           color="primary"
-          placeholder="Name"
+          placeholder="Select Protocol"
           type="text"
           variant="flat"
         />
-        <Select fullWidth placeholder="Address">
+        <Select fullWidth placeholder="Amount">
           <SelectItem key={"example"} value="1">
             Type 1
           </SelectItem>

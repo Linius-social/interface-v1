@@ -20,11 +20,11 @@ function KOL(props: KOLProps) {
         <Input
           fullWidth
           color="primary"
-          placeholder="Name"
+          placeholder="Select KOL"
           type="text"
           variant="flat"
         />
-        <Select fullWidth placeholder="Address">
+        <Select fullWidth placeholder="Amount">
           <SelectItem key={"example"} value="1">
             Type 1
           </SelectItem>

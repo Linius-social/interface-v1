@@ -1,15 +1,13 @@
 "use client";
 
-import { Tabs, Tab } from "@nextui-org/react";
+import { Tab, Tabs } from "@nextui-org/react";
 
 import KOL from "./KOL";
-import Project from "./Project";
 import Protocol from "./Protocol";
 
 const tabs = [
-  { label: "Protocol", content: <Protocol /> },
-  { label: "Project", content: <Project /> },
-  { label: "KOL", content: <KOL /> },
+  { label: "Stake protocol token", content: <Protocol /> },
+  { label: "stake KOL's Token", content: <KOL /> },
 ];
 const StakingTabsContainer = () => {
   return (

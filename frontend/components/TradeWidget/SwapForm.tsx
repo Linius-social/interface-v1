@@ -137,7 +137,8 @@ function TokenSelect({
 }
 const SwapInput = React.forwardRef<HTMLInputElement, SwapInputProps>(
   (props, ref) => {
-    const { label, token, onTokenSelect, amount, onAmountChange, ...rest } = props;
+    const { label, token, onTokenSelect, amount, onAmountChange, ...rest } =
+      props;
 
     return (
       <div className="w-full flex flex-row items-center gap-4 px-4 py-6 bg-foreground-100 rounded-[32px]">
@@ -156,7 +157,7 @@ const SwapInput = React.forwardRef<HTMLInputElement, SwapInputProps>(
         />
       </div>
     );
-  }
+  },
 );
 
 SwapInput.displayName = "SwapInput"; // Adding a display name for forwardRef

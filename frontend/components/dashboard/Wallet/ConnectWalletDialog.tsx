@@ -112,7 +112,7 @@ function WalletRow({ wallet, onConnect }: WalletRowProps) {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (e.key === "Enter" || e.key === " ") {
       handleWalletItemClick(); // Trigger click on "Enter" or "Space"
     }
   };
@@ -124,7 +124,7 @@ function WalletRow({ wallet, onConnect }: WalletRowProps) {
         role="button"
         tabIndex={0}
         onClick={handleWalletItemClick}
-        onKeyPress={handleKeyPress}  // Adding keyboard listener
+        onKeyPress={handleKeyPress} // Adding keyboard listener
       >
         <div
           className={clsx(
