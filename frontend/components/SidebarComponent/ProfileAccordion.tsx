@@ -22,6 +22,8 @@ export type ProfileAccordionProps = {
 };
 
 const ProfileAccordion = ({ name, address }: ProfileAccordionProps) => {
+  console.log(name, address);
+
   const truncatedAddress = truncateText(address, 20);
   const [isClient, setIsClient] = React.useState(false);
   const { connected, isLoading } = useWallet();

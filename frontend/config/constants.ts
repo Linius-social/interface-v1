@@ -103,3 +103,6 @@ export const SOCIAL_ADDRESS = process.env.NEXT_PUBLIC_SOCIAL_ADDRESS as string;
 export const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
 export const IRYS_GATE_WAY = process.env.NEXT_PUBLIC_IRYS_GATE_WAY as string;
+
+export const METADATA_OBJECT_ADDRESS = process.env
+  .NEXT_PUBLIC_METADATA_OBJECT_ADDRESS as string;

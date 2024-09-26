@@ -7,7 +7,7 @@ import Protocol from "./Protocol";
 
 const tabs = [
   { label: "Stake protocol token", content: <Protocol /> },
-  { label: "stake KOL's Token", content: <KOL /> },
+  { label: "Stake KOL's Token", content: <KOL /> },
 ];
 const StakingTabsContainer = () => {
   return (
