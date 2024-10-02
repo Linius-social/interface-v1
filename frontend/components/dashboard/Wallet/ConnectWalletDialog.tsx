@@ -15,7 +15,7 @@ import clsx from "clsx";
 import { ArrowDown01Icon, MultiplicationSignIcon } from "hugeicons-react";
 import React from "react";
 
-import { Logo } from "@/components/icons";
+import LogoIcon from "@/components/shared/icon/LogoIcon";
 
 interface ConnectWalletDialogProps extends WalletSortingOptions {
   close: () => void;
@@ -35,7 +35,7 @@ function ConnectWalletDialog({
   return (
     <ModalContent className="overflow-auto sm:m-0 shadow-none">
       <ModalHeader className="flex flex-col gap-2 items-center">
-        <Logo className="h-16 w-16 shadow-lg shadow-primary" />
+        <LogoIcon className="h-16 w-16 shadow-lg" />
         <h6 className="text-2xl text-foreground-900">Connect to Social</h6>
       </ModalHeader>
       <ModalBody className="overflow-auto rounded-[32px]">
