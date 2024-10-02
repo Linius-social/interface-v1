@@ -102,25 +102,25 @@ function Protocol(props: ProtocolProps) {
 
         <div className="flex justify-between w-full mt-2 flex-wrap gap-2">
           <Button
-            className="bg-gray-700 text-white px-2 py-1 text-sm"
+            className="px-2 py-1 text-sm"
             onClick={() => handlePercentage(25)}
           >
             25%
           </Button>
           <Button
-            className="bg-gray-700 text-white px-2 py-1 text-sm"
+            className="px-2 py-1 text-sm"
             onClick={() => handlePercentage(50)}
           >
             50%
           </Button>
           <Button
-            className="bg-gray-700 text-white px-2 py-1 text-sm"
+            className="px-2 py-1 text-sm"
             onClick={() => handlePercentage(75)}
           >
             75%
           </Button>
           <Button
-            className="bg-gray-700 text-white px-2 py-1 text-sm"
+            className="px-2 py-1 text-sm"
             onClick={() => handlePercentage(100)}
           >
             Max
