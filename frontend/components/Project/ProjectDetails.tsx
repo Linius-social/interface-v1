@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "@nextui-org/image";
+import { Image } from "@nextui-org/react";
 import { SearchIcon } from "lucide-react";
 
 export type ProjectDetailsProps = {
@@ -20,10 +20,13 @@ const ProjectDetails = ({
         <p className="text-gray-400 text-sm">Explore all existin project</p>
       </div>
       <div className="space-y-4">
-        <div className="space-y-2">{description}</div>
+        <div className="space-y-2 text-base">{description}</div>
         <Image
           alt="Project Image"
-          className="rounded-lg mt-4"
+          className="rounded-[32px] mt-4 w-full"
+          classNames={{
+            wrapper: "!max-w-full",
+          }}
           src={projectImageLink}
         />
       </div>

@@ -159,6 +159,9 @@ const SwapInput = React.forwardRef<HTMLInputElement, SwapInputProps>(
     );
   },
 );
+
+SwapInput.displayName = "SwapInput"; // Adding a display name for forwardRef
+
 const SwapDetail = ({ label, value }: { label: string; value: string }) => (
   <div className="flex flex-row justify-between items-center">
     <p className="text-foreground-500 text-sm">{label}</p>

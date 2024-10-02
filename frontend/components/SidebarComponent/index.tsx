@@ -7,6 +7,7 @@ import {
   Notification,
   Task,
   User,
+  ArrowSwapVertical,
 } from "iconsax-react";
 import { useContext } from "react";
 
@@ -44,6 +45,11 @@ const lisSite = [
     title: "Project",
     icon: <DocumentText />,
     href: "/project",
+  },
+  {
+    title: "Faucet",
+    icon: <ArrowSwapVertical />,
+    href: "/faucet",
   },
 ];
 

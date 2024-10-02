@@ -9,7 +9,9 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
-		"@aptos-labs/wallet-adapter-react": "^3.6.0",
+		"@aptos-labs/ts-sdk": "^1.22.2",
+		"@aptos-labs/wallet-adapter-react": "^3.6.2",
+		"@irys/sdk": "^0.2.11",
 		"@nextui-org/button": "2.0.37",
 		"@nextui-org/code": "2.0.32",
 		"@nextui-org/input": "2.2.4",
@@ -25,6 +27,7 @@
 		"@okwallet/aptos-wallet-adapter": "^0.0.7",
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
+		"axios": "^1.7.7",
 		"clsx": "2.1.1",
 		"framer-motion": "~11.1.1",
 		"hugeicons-react": "^0.3.0",
