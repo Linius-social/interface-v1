@@ -3,9 +3,10 @@
 import { Tab, Tabs } from "@nextui-org/react";
 
 import ProfileComponent from "./ProfileComponent";
+import TransactionComponent from "./TransactionComponent";
 
-import { MOCK_PROJECT_DATA, PROFILE } from "@/config/constants";
 import ProjectInformationCard from "@/components/ProfileComponent/Project/ProjectInformationCard";
+import { MOCK_PROJECT_DATA, PROFILE } from "@/config/constants";
 
 const ProfilePageComponent = () => {
   const userData = PROFILE;
@@ -31,24 +32,7 @@ const ProfilePageComponent = () => {
         variant="light"
       >
         <Tab key="Transactions" title="Transactions">
-          <ProjectInformationCard
-            projectDescription={mockProjectData.projectDescription}
-            projectImageLink={mockProjectData.projectImageLink}
-            projectLink={mockProjectData.projectLink}
-            projectName={mockProjectData.projectName}
-          />
-          <ProjectInformationCard
-            projectDescription={mockProjectData.projectDescription}
-            projectImageLink={mockProjectData.projectImageLink}
-            projectLink={mockProjectData.projectLink}
-            projectName={mockProjectData.projectName}
-          />
-          <ProjectInformationCard
-            projectDescription={mockProjectData.projectDescription}
-            projectImageLink={mockProjectData.projectImageLink}
-            projectLink={mockProjectData.projectLink}
-            projectName={mockProjectData.projectName}
-          />
+          <TransactionComponent />
         </Tab>
         <Tab key="Me" title="Me">
           <ProjectInformationCard
