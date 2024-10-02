@@ -30,6 +30,26 @@ const ProfilePageComponent = () => {
         radius="full"
         variant="light"
       >
+        <Tab key="Transactions" title="Transactions">
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
+        </Tab>
         <Tab key="Me" title="Me">
           <ProjectInformationCard
             projectDescription={mockProjectData.projectDescription}
@@ -51,16 +71,44 @@ const ProfilePageComponent = () => {
           />
         </Tab>
         <Tab key="Projects" title="Projects">
-          here
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
         </Tab>
         <Tab key="NFTs" title="NFTs">
-          here
-        </Tab>
-        <Tab key="Transactions" title="Transactions">
-          hehe
-        </Tab>
-        <Tab key="Activities" title="Activites">
-          here
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
+          <ProjectInformationCard
+            projectDescription={mockProjectData.projectDescription}
+            projectImageLink={mockProjectData.projectImageLink}
+            projectLink={mockProjectData.projectLink}
+            projectName={mockProjectData.projectName}
+          />
         </Tab>
       </Tabs>
     </div>

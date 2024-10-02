@@ -8,7 +8,7 @@ import {
   Task,
   User,
 } from "iconsax-react";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { Vault } from "lucide-react";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 
@@ -21,37 +21,40 @@ import SidebarMenu from "./SidebarMenu";
 
 import { PROFILE, SOCIAL_ADDRESS } from "@/config/constants";
 
-const lisSite = [
-  {
-    title: "Home",
-    icon: <Home />,
-    href: "/dashboard",
-  },
-  {
-    title: "Profile",
-    icon: <User />,
-    href: "/actors",
-  },
-  {
-    title: "Notification",
-    icon: <Notification />,
-    href: "/notification",
-  },
-  {
-    title: "Stake",
-    icon: <Money4 />,
-    href: "/stake",
-  },
-  {
-    title: "Project",
-    icon: <DocumentText />,
-    href: "/project",
-  },
-];
-
 const SidebarComponent = () => {
   const profile = useContext(UserContext);
   const wallet = useWallet();
+
+  const lisSite = useMemo(
+    () => [
+      {
+        title: "Home",
+        icon: <Home />,
+        href: "/home",
+      },
+      {
+        title: "Profile",
+        icon: <User />,
+        href: "/account" + (wallet.account ? `/${wallet.account.address}` : ""),
+      },
+      {
+        title: "Notification",
+        icon: <Notification />,
+        href: "/notification",
+      },
+      {
+        title: "Stake",
+        icon: <Money4 />,
+        href: "/stake",
+      },
+      {
+        title: "Project",
+        icon: <DocumentText />,
+        href: "/project",
+      },
+    ],
+    [wallet],
+  );
 
   const handleFaucet = async () => {
     await wallet.signAndSubmitTransaction({

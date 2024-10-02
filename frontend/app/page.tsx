@@ -1,13 +1,23 @@
+"use client";
+
 import { Code } from "@nextui-org/code";
 import { Link } from "@nextui-org/link";
 import { Snippet } from "@nextui-org/snippet";
 import { button as buttonStyles } from "@nextui-org/theme";
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
 
 import { GithubIcon } from "@/components/icons";
 import { subtitle, title } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
+import PageDashboard from "@/app/home/page";
 
 export default function Home() {
+  const wallet = useWallet();
+
+  if (wallet.account) {
+    return <PageDashboard />;
+  }
+
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="inline-block max-w-lg text-center justify-center">
