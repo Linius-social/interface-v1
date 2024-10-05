@@ -13,7 +13,7 @@ import Area from "./Area";
 import { API_URL, SOCIAL_ADDRESS } from "@/config/constants";
 import { accountKolBalance } from "@/view-functions/accountBalance";
 
-interface KOLProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface KOLProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 export type KOL = {
   user_address: string;
@@ -87,49 +87,43 @@ function KOL(props: KOLProps) {
       title="Stake KOL Tokens"
     >
       <form
-        className="flex flex-col items-center justify-center gap-4 p-4 rounded-lg border border-primary w-64 bg-black text-white"
+        className="flex flex-col items-center justify-center gap-4 rounded-md  w-full text-white"
         onSubmit={handleStake}
       >
-        {/* Select KOL Address */}
-        <div className="w-full">
-          <Select
-            fullWidth
-            className="mb-2"
-            placeholder="Select KOL or Type Address"
-            onChange={(e) => handleSelectChange(e.target.value)} // Correct event handling
-          >
-            {kolList.map((kol: KOL) => (
-              <SelectItem key={kol.user_address} value={kol.user_address}>
-                {kol.user_address}
-              </SelectItem>
-            ))}
-          </Select>
-
-          {/* Input for typing the KOL address manually */}
-          {selectedOption === "" && (
-            <Input
-              fullWidth
-              className="mt-2 bg-gray-900 text-white"
-              color="primary"
-              placeholder="Type KOL Address"
-              type="text"
-              variant="flat"
-              onChange={(e) => setKolAddress(e.target.value)}
-            />
-          )}
-        </div>
-
-        {/* Show KOL Token Balance */}
-        <div className="text-sm text-gray-400">
+        <div className="text-sm text-gray-400 w-full text-end">
           Balance: <span className="font-semibold">{balance / 10 ** 8}</span>{" "}
           KOL Tokens
         </div>
+        {/* Select KOL Address */}
+        <Select
+          fullWidth
+          placeholder="Select KOL or Type Address"
+          onChange={(e) => handleSelectChange(e.target.value)} // Correct event handling
+        >
+          {kolList.map((kol: KOL) => (
+            <SelectItem key={kol.user_address} value={kol.user_address}>
+              {kol.user_address}
+            </SelectItem>
+          ))}
+        </Select>
+
+        {/* Input for typing the KOL address manually */}
+        {selectedOption === "" && (
+          <Input
+            fullWidth
+            placeholder="Type KOL Address"
+            type="text"
+            variant="flat"
+            onChange={(e) => setKolAddress(e.target.value)}
+          />
+        )}
+
+        {/* Show KOL Token Balance */}
 
         {/* Enter Amount to Stake */}
         <Input
           fullWidth
-          className="bg-gray-900 text-white"
-          color="primary"
+          className="text-white"
           min={0}
           placeholder="Enter Amount to Stake"
           type="number"
@@ -140,25 +134,21 @@ function KOL(props: KOLProps) {
         {/* Percentage buttons */}
         <div className="flex justify-between w-full mt-2 flex-wrap gap-2">
           <Button
-            className="bg-gray-700 text-white px-2 py-1 text-sm"
             onClick={() => handlePercentage(0.25)}
           >
             25%
           </Button>
           <Button
-            className="bg-gray-700 text-white px-2 py-1 text-sm"
             onClick={() => handlePercentage(0.5)}
           >
             50%
           </Button>
           <Button
-            className="bg-gray-700 text-white px-2 py-1 text-sm"
             onClick={() => handlePercentage(0.75)}
           >
             75%
           </Button>
           <Button
-            className="bg-gray-700 text-white px-2 py-1 text-sm"
             onClick={() => handlePercentage(1)}
           >
             Max

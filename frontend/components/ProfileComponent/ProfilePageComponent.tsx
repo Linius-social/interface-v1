@@ -31,7 +31,7 @@ const ProfilePageComponent = () => {
         radius="full"
         variant="light"
       >
-        <Tab key="Transactions" title="Transactions">
+        <Tab key="Transactions" title="Transactions" className="w-full">
           <TransactionComponent />
         </Tab>
         <Tab key="Me" title="Me">

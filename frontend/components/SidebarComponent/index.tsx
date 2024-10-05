@@ -79,7 +79,7 @@ const SidebarComponent = () => {
 
   return (
     <UserContext.Provider value={PROFILE}>
-      <aside className="h-screen z-[20] sticky top-0 p-2">
+      <aside className="h-screen z-[20] sticky top-0 p-2 min-w-64 ">
         <div>
           <ProfileAccordion
             address={wallet?.account?.address || "0x0"}

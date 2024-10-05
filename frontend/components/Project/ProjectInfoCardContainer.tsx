@@ -19,7 +19,7 @@ const ProjectInfoCardContainer = () => {
   const projectData = genProjectData();
 
   return (
-    <div className="my-auto grid max-w-7xl grid-cols-1 gap-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
+    <div className="my-auto grid max-w-7xl grid-cols-1 gap-4 lg:grid-cols-2">
       {projectData.map((project, index) => (
         <ProjectInfoCard key={index} {...project} />
       ))}

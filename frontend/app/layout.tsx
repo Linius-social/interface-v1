@@ -43,11 +43,11 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="flex h-screen overflow-hidden">
-            <div className="w-1/6 bg-sidebar p-4 border-white sticky top-0 h-screen hidden sm:block">
+            <div className="w-1/6 bg-sidebar p-4 border-white sticky top-0 h-screen hidden lg:block">
               <SidebarComponent />
             </div>
             <main className="w-full p-6 overflow-y-auto lg:px-64">{children}</main>
-            <div className="sm:hidden bottom-0 fixed w-full bg-background/1 backdrop-blur-2xl">
+            <div className="lg:hidden bottom-0 fixed w-full bg-background/1 backdrop-blur-2xl">
               <BottomNavbarComponent />
             </div>
           </div>

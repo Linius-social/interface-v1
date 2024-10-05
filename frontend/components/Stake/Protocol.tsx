@@ -71,10 +71,10 @@ function Protocol(props: ProtocolProps) {
       title="Stake Protocol Tokens"
     >
       <form
-        className="flex flex-col items-center justify-center gap-4 p-4 rounded-lg border border-primary w-64 bg-black text-white"
+        className="flex flex-col items-center justify-center gap-4 rounded-lg w-full text-white"
         onSubmit={handleStake}
       >
-        <div className="flex flex-row justify-between items-center w-full p-2 bg-gray-800 rounded-lg">
+        <div className="flex flex-row justify-between items-center w-full p-2 rounded-md">
           <div className="flex items-center">
             <img
               alt="Token"
@@ -90,8 +90,7 @@ function Protocol(props: ProtocolProps) {
 
         <Input
           fullWidth
-          className="p-2 text-lg rounded-md border border-primary focus:outline-none focus:ring-2 focus:ring-primary bg-gray-900 text-white"
-          color="primary"
+          className="p-2 text-lg rounded-md"
           min={0}
           placeholder="Enter amount to stake"
           step="any" // Allows fractional inputs

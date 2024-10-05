@@ -43,7 +43,7 @@ const ProjectInfoCard: React.FC<ProjectInfoCardProps> = ({
   }, [contributors, minBuy, maxBuy]);
 
   return (
-    <Card className="p-4 rounded-3xl max-w-sm m-4">
+    <Card className="p-4 rounded-3xl w-full m-4">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3">
@@ -83,7 +83,6 @@ const ProjectInfoCard: React.FC<ProjectInfoCardProps> = ({
         <Progress
           className="h-2"
           classNames={{
-            base: "max-w-md",
             track: "drop-shadow-md border border-default",
             indicator: "bg-gradient-to-r from-orange-500 to-orange-300",
           }}

@@ -36,7 +36,7 @@ const TransactionInfo = ({ time, address1, address2 }: TransactionInfoProp) => {
   const relativeTime = calculateRelativeTime(time);
 
   return (
-    <div className="w-full flex justify-between py-2 px-4 items-center space-x-4 border-l-2 ">
+    <div className="w-full flex flex-row justify-between py-2 px-4 items-center space-x-4">
       <div className="text-purple-400 text-sm w-24">{relativeTime}</div>
       <div className="flex items-center space-x-2 flex-1">
         <span className="bg-orange-500 text-black text-xs px-2 py-1 rounded-full">
@@ -81,7 +81,7 @@ const TransactionComponent = () => {
   ];
 
   return (
-    <div className="space-y-px">
+    <div className="w-full flex flex-col gap-4">
       {transactions.map((transaction, index) => (
         <TransactionInfo key={index} {...transaction} />
       ))}
