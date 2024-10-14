@@ -1,13 +1,14 @@
 import "@/styles/globals.css";
 import clsx from "clsx";
 import { Metadata, Viewport } from "next";
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
 
 import { Providers } from "./providers";
 
+import { BottomNavbarComponent } from "@/components/BottomNavbarComponent";
 import SidebarComponent from "@/components/SidebarComponent";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
-import { BottomNavbarComponent } from "@/components/BottomNavbarComponent";
 
 export const metadata: Metadata = {
   title: {
@@ -32,25 +33,44 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const wallet = useWallet();
+
   return (
     <html suppressHydrationWarning lang="en">
       <head />
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="flex h-screen overflow-hidden">
-            <div className="w-1/6 bg-sidebar p-4 border-white sticky top-0 h-screen hidden lg:block">
-              <SidebarComponent />
-            </div>
-            <main className="w-full p-6 overflow-y-auto lg:px-64">{children}</main>
-            <div className="lg:hidden bottom-0 fixed w-full bg-background/1 backdrop-blur-2xl">
-              <BottomNavbarComponent />
-            </div>
-          </div>
+          {wallet.account ? (
+            <>
+              <div className="flex h-screen overflow-hidden">
+                <div className="w-1/6 bg-sidebar p-4 border-white sticky top-0 h-screen hidden lg:block">
+                  <SidebarComponent />
+                </div>
+                <main className="w-full p-6 overflow-y-auto lg:px-64">
+                  {children}
+                </main>
+                <div className="lg:hidden bottom-0 fixed w-full bg-background/1 backdrop-blur-2xl">
+                  <BottomNavbarComponent />
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex h-screen overflow-hidden">
+                <main className="w-full p-6 overflow-y-auto lg:px-64">
+                  {children}
+                </main>
+                <div className="lg:hidden bottom-0 fixed w-full bg-background/1 backdrop-blur-2xl">
+                  <BottomNavbarComponent />
+                </div>
+              </div>
+            </>
+          )}
         </Providers>
       </body>
     </html>
